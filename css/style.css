@@ -1,0 +1,107 @@
+/*
+    =    means equals (exactly the same)
+   ^=   means begins with
+   $=   means ends with
+   *=   means contains anywhere within the attribute value
+*/
+
+@font-face{
+    font-family: "alegreya-sans.thin";
+    src: url('alegreya-sans.thin.ttf');/*uploaded font for title*/
+}
+
+@font-face{
+    font-family: "alegreya-sans.regular";
+    src: url('alegreya-sans.regular.ttf');/*uploaded font for all text but title*/
+}
+
+body {
+    background-color: #F7F5F2;/*very light grey*/
+}
+
+#text_block{
+    font-family: 'alegreya-sans.regular';
+    font-size: 100%;
+    text-align: center;
+    padding: 3%;/*adds a padding around the main text blocks of the site*/
+}
+
+#text_block_about{
+    font-family: 'alegreya-sans.regular';
+    font-size: 300%;
+    text-align: center;
+    padding: 3%;
+}
+
+#text_block_portfolio{
+    font-family: 'alegreya-sans.regular';
+    font-size: 300%;
+    text-align: center;
+    padding: 3%;
+}
+
+#image img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;/*makes the image a smaller percent*/
+    height: 40%;/*same as above*/
+    padding: 30px;
+
+}
+
+#image img:hover{/*gives the image a slight increase in size when hovered over*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 42%;
+    height: 42%;
+    padding: 24px;
+}
+
+#name{/*large minimalistic title*/
+    display: block;
+    font-family: 'alegreya-sans.thin';
+    font-size: 500%;
+    text-align: center;
+    color: black;
+    width: auto;
+    height: auto;
+    float: inherit;
+}
+
+#main{
+    width: auto;
+    display: block;
+    float: inherit;
+    height: auto;
+}
+
+#menu{
+    float: right;
+    display: inline;
+    text-align: right;/*menu to top right*/
+    width:100%;
+}
+
+#menu li{
+    padding-left: 15px;
+    padding-right: 15px;
+    float: right;
+    display: inline;
+    text-align:right;
+    list-style: none;
+}
+#menu li a{
+
+    font-family: 'alegreya-sans.regular';
+    color: lightgray;/*non highlighted color of menu item*/
+    font-size: 115%;
+    text-decoration: none;
+    padding: 20%;
+}
+
+#menu li a:hover {
+    color: grey;/*highlighted color of menu item*/
+    text-decoration: none;
+}
