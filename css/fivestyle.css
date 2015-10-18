@@ -1,6 +1,6 @@
 /*assignment:  Adding JSON and JS
 Alexander R Cushing, UMass Lowell Computer Science student 91.461 GUI Programming I
-alexander_cushing@student.uml.edu
+                                                                  alexander_cushing@student.uml.edu
 Copyright (c) 2015 by Alexander Cushing.  All rights reserved.  May be freely
 copied or excerpted for educational purposes with credit to the author.
 updated by ARC on OCT 5, 2015 at 4:08 PM
@@ -18,78 +18,62 @@ updated by ARC on OCT 5, 2015 at 4:08 PM
     font-family: "alegreya-sans.thin";
     src: url('alegreya-sans.thin.ttf');
 }
-/*uploaded font for all text but title*/
+/*uploaded font for all text*/
 @font-face{
     font-family: "alegreya-sans.regular";
     src: url('alegreya-sans.regular.ttf');
 }
-
+/*very light grey background*/
 body {
-    background-color: #F7F5F2;/*very light grey*/
+    background-color: #F7F5F2;
 }
-
 /*the line under the title*/
 #line{
     padding-top: 1%;
     padding-bottom: 1%;
 }
-
-#multGraph{
+/*picture for the article, centering it and sizing it appropriately*/
+.pic{
     display: block;
+    width: 36%;
+    height: 36%;
     margin-left: auto;
     margin-right: auto;
-    width: 170px;
 }
-
-#mySubmit{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 170px;
-    padding: 30px;
-}
-
-#result{
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 60px;
-}
-
-
-/*adds a padding around the main text blocks of the site*/
-#text_block{
+/*Title of the article's separate styling with a larger text and a bolder font*/
+.title{
     font-family: 'alegreya-sans.regular';
-    font-size: 100%;
     text-align: center;
-    padding: 3%;
+    font-size: 50px;
 }
-/*this is the about me/the site text blocks formatting*/
-#text_block_about{
+/*formatting for authors name*/
+.author{
+    font-family: 'alegreya-sans.thin';
+    text-align: center;
+}
+/*formatting for the location of the article, in this case the website title*/
+.location{
+    font-family: 'alegreya-sans.thin';
+    text-align: center;
+}
+/*formatting of the articles date when written and published*/
+.date{
+    font-family: 'alegreya-sans.thin';
+    text-align: center;
+}
+/*formats the paragraph content of the article putting it in a text block and giving it margins*/
+#content p{
     font-family: 'alegreya-sans.regular';
-    font-size: 300%;
+    color : black;
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+/*this is the link to the full article*/
+#linktoarticle{
     text-align: center;
-    padding: 3%;
 }
-
-/*makes the image a smaller percent*/
-#image img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    height: 40%;
-    padding: 30px;
-
-}
-/*gives the image a slight increase in size when hovered over*/
-#image img:hover{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-/*large minimalistic title*/
+/*title name at top*/
 #name{
     display: block;
     font-family: 'alegreya-sans.thin';
@@ -100,7 +84,7 @@ body {
     height: auto;
     float: inherit;
 }
-/*main blocks formatting*/
+/*main body*/
 #main{
     width: auto;
     display: block;
@@ -108,20 +92,13 @@ body {
     height: auto;
 }
 /*menu to top right*/
-/*#menu{
-    float: right;
-    display: inline;
-    text-align: right;
-    width:100%;
-}*/
-/*this is the menus formatting making it float to the upper right*/
 #menu{
     float: right;
     display: inline;
     text-align: right;
     width:100%;
 }
-/*list item behavior*/
+/*list items formatting*/
 #menu li{
     padding-left: 15px;
     padding-right: 15px;

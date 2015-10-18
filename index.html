@@ -1,42 +1,121 @@
-ssignment:  Creating Your First Web Page
-  Alexander R Cushing, UMass Lowell Computer Science student 91.461 GUI Programming I
-    alexander_cushing@student.uml.edu
-      Copyright (c) 2015 by Alexander Cushing.  All rights reserved.  May be freely
-            copied or excerpted for educational purposes with credit to the author.
-	      updated by ARC on Sept 9, 2015 at 2:08 PM
-	      -->
-	      <!DOCTYPE html>
-	      <html lang="en">
-	      <head>
-	          <link href='https://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'><!-- css -->
-		      <link rel="stylesheet" href = "css/style.css">
-		          <meta charset="UTF-8">
-			      <title>Alex Cushing</title>
-			      </head>
-			      <body>
+<!--assignment:  Adding JSON and JS
+Alexander R Cushing, UMass Lowell Computer Science student 91.461 GUI Programming I
+alexander_cushing@student.uml.edu
+Copyright (c) 2015 by Alexander Cushing.  All rights reserved.  May be freely
+copied or excerpted for educational purposes with credit to the author.
+updated by ARC on OCT 16, 2015 at 4:08 PM
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Alex Cushing</title>
 
-			      <div id="main">
-			          <div id="menu">
-				          <ul>
-					              <li><a href="index.html">HOME</a></li><!--menu selection to home-->
-						                  <li><a href="About.html">ABOUT</a></li><!--menu selection to about-->
-								              <li><a href="portfolio.html">PORTFOLIO</a></li><!--menu selection to portfolio-->
-									              </ul>
-										          </div>
-											  </div>
 
-											  <div id="name">
-											      A l e x  C u s h i n g<!--spaced out title-->
-											      </div>
+    <script type="text/javascript">
+        function myFunction() {
+            var one = document.getElementById('first_number').value;
+            var two = document.getElementById('second_number').value;
+            var three = document.getElementById('third_number').value;
+            var four = document.getElementById('fourth_number').value;
+            var i;
+            var j;
+            var array = [one, two, three, four]
+            var enterBreak = "<br>"
+            var openTable = "<table>";
+            var closeTable = "</table>";
+            var openRow = "<tr>";
+            var closeRow = "</tr>";
+            var openCol = "<th>";
+            var closeCol = "</th>";
+            var string = "";
 
-											      <div id="image">
-											          <img src="me.jpg" alt="Pic of me"><!--main image-->
-												  </div>
+            if (!isNaN(one) & !isNaN(two) & !isNaN(three) & !isNaN(four)) { //if any of thr input is non-numeric go to else
 
-												  <div id="text_block"><!--body text-->
-												      This is placeholder text, while I design my website and decide what I want to put here, later on. This site is still
-												          under construction, so don't judge me based on this. Thank you, and have a wonderful day.
-													  </div>
+                string = string + enterBreak;
+                string = string + openTable; //opening the table
 
-													  </body>
-													  </html>
+                string = string + openRow + openCol + " " + closeCol; //for (1,1) and starts a row
+                for (j = 0; j < array.length; j++) //for the first row(printing the original four numbers)
+                {
+                    string = string + openCol + array[j] + closeCol //prints the first number (i, 1)
+                }
+
+                string = string + closeRow;
+
+                for (i = 0; i < array.length; i++) {
+                    string = string + openRow;
+                    string = string + openCol + array[i] + closeCol;
+                    for (j = 0; j < array.length; j++) {
+                        string = string + openCol;
+                        string = string + (array[j] * array[i]) + closeCol;
+                    }
+                    string = string + closeRow;
+                }
+                string = string + closeTable;
+                document.getElementById("result").innerHTML = string;
+            }
+            else{
+                string = "please input number values only" + enterBreak;
+                document.getElementById("result").innerHTML = string;
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<script src="JS/Title.js"></script>
+<!--the following "fork me on github" was from https://github.com/blog/273-github-ribbons-->
+<a href="https://github.com/alexcushing"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Find me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
+<div id="main">
+    <div id="menu">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <!--menu selection to home-->
+            <li><a href="About.html">ABOUT</a></li>
+            <!--menu selection to about-->
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <!--menu selection to portfolio-->
+        </ul>
+    </div>
+</div>
+<div id="name">
+    <!--spaced out title-->
+    A l e x C u s h i n g
+</div>
+<div id="line"><hr></div>
+<div id="image">
+    <!--main image-->
+    <img src="images/me.jpg" alt="Pic of me">
+</div>
+
+<form id="multGraph">
+    Enter first number:<br>
+    <input type="text" id="first_number">
+    <br>
+    Enter second number:<br>
+    <input type="text" id="second_number">
+    <br>
+    Enter third number:<br>
+    <input type="text" id="third_number">
+    <br>
+    Enter fourth number:<br>
+    <input type="text" id="fourth_number">
+</form>
+<div id="mySubmit">
+    <button onclick="myFunction()">Submit</button>
+
+<p id="result"> </p>
+</div>
+<!--the temp body text-->
+<div id="text_block">
+    This is placeholder text, while I design my website and decide what I want to put here, later on. This site is still
+    under construction, so don't judge me based on this. Thank you, and have a wonderful day.
+</div>
+
+</body>
+</html>
