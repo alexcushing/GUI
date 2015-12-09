@@ -1,0 +1,101 @@
+/*uploaded font for title*/
+@font-face{
+    font-family: "alegreya-sans.thin";
+    src: url('alegreya-sans.thin.ttf');
+}
+/*uploaded font for all text but title*/
+@font-face{
+    font-family: "alegreya-sans.regular";
+    src: url('alegreya-sans.regular.ttf');
+}
+
+body {
+    background-color: #F7F5F2;/*very light grey*/
+}
+/*
+the centering of the rack
+*/
+#rack{
+    margin: auto;
+    width: 28%;
+}
+
+/*
+the centering of the total score
+*/
+#totalScore{
+    text-align: center;
+}
+/*
+the centering of the board
+*/
+#board{
+    text-align: center;
+
+}
+/*
+the centering of the output class
+*/
+.outPut{
+    text-align: center;
+
+}
+/*
+the name styling
+*/
+#name{
+    display: block;
+    font-family: 'alegreya-sans.thin';
+    font-size: 500%;
+    text-align: center;
+    color: black;
+    width: auto;
+    height: auto;
+    float: inherit;
+}
+
+
+/*main blocks formatting*/
+#main{
+    width: auto;
+    display: block;
+    float: inherit;
+    height: auto;
+}
+/*menu to top right*/
+/*#menu{
+    float: right;
+    display: inline;
+    text-align: right;
+    width:100%;
+}*/
+/*this is the menus formatting making it float to the upper right*/
+#menu{
+    float: right;
+    display: inline;
+    text-align: right;
+    width:100%;
+}
+/*list item behavior*/
+#menu li{
+    padding-left: 15px;
+    padding-right: 15px;
+    display: inline;
+    text-align:right;
+    list-style: none;
+}
+/*non highlighted color of menu item*/
+#menu li a{
+    transition: all 0.4s ease-out;
+    font-family: 'alegreya-sans.regular';
+    color: lightgray;
+    font-size: 115%;
+    text-decoration: none;
+}
+/*highlighted color of menu item*/
+#menu li a:hover {
+    visibility: visible;
+    transition: all 0.4s ease-in;
+    color: grey;
+    text-decoration: none;
+}

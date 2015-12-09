@@ -1,9 +1,9 @@
-/*assignment:  Adding JSON and JS
+/*assignment:  Validating
 Alexander R Cushing, UMass Lowell Computer Science student 91.461 GUI Programming I
 alexander_cushing@student.uml.edu
 Copyright (c) 2015 by Alexander Cushing.  All rights reserved.  May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by ARC on OCT 5, 2015 at 4:08 PM
+updated by ARC on NOV 18, 2015 at 12:18 AM
 */
 
 /*
@@ -33,28 +33,41 @@ body {
     padding-top: 1%;
     padding-bottom: 1%;
 }
-
+/*
+this is the format for my table
+it will be centered and have the regular
+site's default font
+*/
 #multGraph{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 170px;
-}
-
-#mySubmit{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 170px;
-    padding: 30px;
-}
-
-#result{
+    font-family: 'alegreya-sans.regular';
+    font-size: 100%;
     text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 60px;
+   /* margin: inherit;*/
+    /*width: 100%;*/
+    padding: 10px;
+}
+/*
+this is the format for my submit
+it will be centered and separated from the printed
+results and the input
+*/
+#mySubmit{
+    font-family: 'alegreya-sans.regular';
+    font-size: 100%;
+    text-align: center;
+    padding: 10px;
+}
+/*
+this is the format for my results
+it will be centered and have the regular
+site's default font and will show the lines
+for the table
+*/
+#result{
+    font-family: 'alegreya-sans.regular';
+    font-size: 100%;
+    text-align: center;
+    padding: 10px;
 }
 
 
@@ -78,11 +91,18 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
-    height: 40%;
+    width: 30%;
+    height: 30%;
     padding: 30px;
 
 }
+
+/*text box error*/
+select.error, textarea.error, input.error {
+    color:#FF0000;
+    border:1px solid red;
+}
+
 /*gives the image a slight increase in size when hovered over*/
 #image img:hover{
     display: block;
@@ -100,6 +120,60 @@ body {
     height: auto;
     float: inherit;
 }
+
+table, th, td {
+    border: 1px solid black;
+    transition: all 0.4s ease-out;
+    border-collapse: collapse;
+}
+th, td {
+    transition: all 0.4s ease-out;
+    padding: 5px;
+    text-align: left;
+}
+
+table:hover, th:hover, td:hover{
+    transition: all 0.4s ease-in;
+}
+
+th:hover, td:hover {
+    transition: all 0.4s ease-in;
+    padding: 5px;
+    text-align: left;
+    font-size: 200%;
+    cursor: zoom-in;
+}
+
+/*stylesheet for when the validator informs the user that they have inncorrect input*/
+#output{
+    display: block;
+    font-family: 'alegreya-sans.regular';
+    text-align: center;
+    padding: 3px;
+    color: red;
+}
+
+/*For keeping record of the errors*/
+#errorLog{
+    display: inherit;
+    font-family: 'alegreya-sans.regular';
+    text-align: center;
+    float: inherit;
+    margin: auto;
+    width: auto;
+}
+
+/*For keeping record of the errors*/
+#errorTxt{
+    display: inline-block;
+    font-family: 'alegreya-sans.regular';
+    text-align: center;
+    float: inherit;
+    margin: auto;
+    width: auto;
+}
+
+
 /*main blocks formatting*/
 #main{
     width: auto;
@@ -131,7 +205,7 @@ body {
 }
 /*non highlighted color of menu item*/
 #menu li a{
-
+    transition: all 0.4s ease-out;
     font-family: 'alegreya-sans.regular';
     color: lightgray;
     font-size: 115%;
@@ -139,6 +213,125 @@ body {
 }
 /*highlighted color of menu item*/
 #menu li a:hover {
+    visibility: visible;
+    transition: all 0.4s ease-in;
     color: grey;
     text-decoration: none;
+}
+
+#field.error {
+    display: inline-block; /* change the display to block*/
+    background-color: #FFDEDE;
+    color: black;
+}
+
+#field2.error {
+    display: inline-block; /* change the display to block*/
+    background-color: #FFDEDE;
+    color: black;
+}
+
+#field3.error {
+    display: inline-block; /* change the display to block*/
+    background-color: #FFDEDE;
+    color: black;
+}
+
+#field4.error {
+    display: inline-block; /* change the display to block*/
+    background-color: #FFDEDE;
+    color: black;
+}
+
+/*this is where each graph displays, hidden unless the link for it is clicked*/
+div.tabContent {
+    clear: both;
+    display: none;
+    border: 1px solid #c9c3ba;
+    padding: 1em;
+    background-color: #f1f0ee;
+}
+/*this happens when the corresponding link is clicked*/
+div.tabContent:target{
+    display: block;
+    position: relative;
+    top: 1px;
+}
+/*the div for the tabs that are dynamically allocated according to the amount of graphs. This places the div to the left of the screen with a nice
+font and font color as well as transitions when not hovering*/
+#tabSetup {
+    color: grey;
+    text-decoration:none;
+    font-family: 'alegreya-sans.regular';
+    list-style: none;
+    display: inline;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 30%;
+    padding: 30px;
+
+}
+/*for the links for each dynamically created graph*/
+#tabSetup a {
+    color: grey;
+    transition: all 0.4s ease-out;
+    font-family: 'alegreya-sans.regular';
+    list-style: none;
+    display: inline;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 30%;
+    padding: 30px;
+
+}
+/*for hovering links, add a slight ease in and color change to let the user know which link they are clicking*/
+#tabSetup a:hover{
+    cursor: pointer;
+    font-size:110%;
+    transition: all 0.4s ease-in;
+    color: black;
+    text-decoration: none;
+}
+/*the list that is created in javascript is edited inside here, giving it a style*/
+nav li {
+    display: inline;
+    border: groove;
+    border-width: 1px 1px 0 1px;
+    margin: 0 5px 0 0;
+}
+
+nav li a {
+    padding: 0 10px;
+}
+/*this is the actual class for the tabs, this will make sure they are floated to the left and not intrusive to the input
+section while still being next to that section, nicely to the left side of the page*/
+.tabMenu{
+    text-decoration:none;
+    float: left;
+    width: 20%;
+}
+/*this is the are where the sliders and text boxes are located, neatly fitted next to the tab menu*/
+.selectionArea{
+    margin: 0 35%;
+}
+
+#myDelete{
+    font-family: 'alegreya-sans.regular';
+    font-size: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+#delete{
+    width: 10%;
+}
+/*scrabble board pic*/
+
+.tiles{
+    width: 5px;
+    height: 5px;
 }

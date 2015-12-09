@@ -1,0 +1,100 @@
+<!--assignment:  Validation
+Alexander R Cushing, UMass Lowell Computer Science student 91.461 GUI Programming I
+worked alongside Tyler J Bainbridge
+alexander_cushing@student.uml.edu
+Copyright (c) 2015 by Alexander Cushing.  All rights reserved.  May be freely
+copied or excerpted for educational purposes with credit to the author.
+updated by ARC on DEC 07, 2015 at 12:18 AM
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/scrabble.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+    <!--jQuery Libary-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--jQuery validation plugin-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+    <!--jQuery_UI Libary-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="JS/scrabble.js"></script>
+    <title>Scrabble</title>
+
+    <script src="javascript/scrabble.js" type="text/javascript"></script>
+
+
+</head>
+</bod>
+<div id="main">
+
+    <div id="menu">
+        <ul>
+            <!--menu selection to home/multiplication table assignment-->
+            <li><a href="index.html">Home</a></li>
+            <!--menu selection to JSON Assignment-->
+            <li><a href="portfolio.html">JSON Assignment</a></li>
+            <!--menu selection to Scrabble game Assignment-->
+            <li><a href="Scrabble.html">Scrabble Assignment</a></li>
+        </ul>
+    </div>
+</div>
+<div id="name">
+    <!--spaced out title-->
+    S C R A B B L E
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="board">
+    <!--this is the game board-->
+    <img id="0" class="board_blocks" src="images/blank.png">
+    <img id="1" class="board_blocks" src="images/blank.png">
+    <img id="2" class="board_blocks" src="images/doubleletter.png">
+    <img id="3" class="board_blocks" src="images/blank.png">
+    <img id="4" class="board_blocks" src="images/blank.png">
+    <img id="5" class="board_blocks" src="images/doubleword.png">
+    <img id="6" class="board_blocks" src="images/blank.png">
+    <img id="7" class="board_blocks" src="images/blank.png">
+</div>
+<br>
+<br><br>
+<br><br>
+<br>
+<!--this is the rack of letters-->
+<div id="rack">
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--this is the total score-->
+<div id="totalScore"></div>
+<br>
+<div class = "outPut">
+    <!--this is the score-->
+Word score: <div id="score"></div>
+<br>
+<div id="word">word</div>
+<br>
+    <!--this is the repopulation button-->
+<button class="btn btn-info" onclick="populateBoard()">
+    Refill tiles
+</button>
+
+    <button type="button" class="btn btn-info" onClick="refreshPage()">Reset</button>
+    <!--this is button to clear the game board-->
+    <button class="btn btn-info" onclick="newTiles()">
+        Clear Board
+    </button>
+
+</div>
+</body>
+</html>

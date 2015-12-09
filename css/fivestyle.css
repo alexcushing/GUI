@@ -84,6 +84,11 @@ body {
     height: auto;
     float: inherit;
 }
+.errorTxt{
+    border: 1px solid red;
+    min-height: 20px;
+}
+
 /*main body*/
 #main{
     width: auto;
@@ -98,7 +103,7 @@ body {
     text-align: right;
     width:100%;
 }
-/*list items formatting*/
+/*list item behavior*/
 #menu li{
     padding-left: 15px;
     padding-right: 15px;
@@ -108,7 +113,7 @@ body {
 }
 /*non highlighted color of menu item*/
 #menu li a{
-
+    transition: all 0.4s ease-out;
     font-family: 'alegreya-sans.regular';
     color: lightgray;
     font-size: 115%;
@@ -116,6 +121,8 @@ body {
 }
 /*highlighted color of menu item*/
 #menu li a:hover {
+    visibility: visible;
+    transition: all 0.4s ease-in;
     color: grey;
     text-decoration: none;
 }

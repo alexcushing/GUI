@@ -1,85 +1,46 @@
-<!--assignment:  Adding JSON and JS
+<!--assignment:  Validation
 Alexander R Cushing, UMass Lowell Computer Science student 91.461 GUI Programming I
 alexander_cushing@student.uml.edu
 Copyright (c) 2015 by Alexander Cushing.  All rights reserved.  May be freely
 copied or excerpted for educational purposes with credit to the author.
-updated by ARC on OCT 16, 2015 at 4:08 PM
+updated by ARC on NOV 18, 2015 at 12:18 AM
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <link href='https://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="JS/home.js"></script>
+    <script>
+        var x = 1;
+        var y = 1;
+        var z = 1;
+    </script>
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
-    <meta charset="UTF-8">
     <title>Alex Cushing</title>
 
-
-    <script type="text/javascript">
-        function myFunction() {
-            var one = document.getElementById('first_number').value;
-            var two = document.getElementById('second_number').value;
-            var three = document.getElementById('third_number').value;
-            var four = document.getElementById('fourth_number').value;
-            var i;
-            var j;
-            var array = [one, two, three, four]
-            var enterBreak = "<br>"
-            var openTable = "<table>";
-            var closeTable = "</table>";
-            var openRow = "<tr>";
-            var closeRow = "</tr>";
-            var openCol = "<th>";
-            var closeCol = "</th>";
-            var string = "";
-
-            if (!isNaN(one) & !isNaN(two) & !isNaN(three) & !isNaN(four)) { //if any of thr input is non-numeric go to else
-
-                string = string + enterBreak;
-                string = string + openTable; //opening the table
-
-                string = string + openRow + openCol + " " + closeCol; //for (1,1) and starts a row
-                for (j = 0; j < array.length; j++) //for the first row(printing the original four numbers)
-                {
-                    string = string + openCol + array[j] + closeCol //prints the first number (i, 1)
-                }
-
-                string = string + closeRow;
-
-                for (i = 0; i < array.length; i++) {
-                    string = string + openRow;
-                    string = string + openCol + array[i] + closeCol;
-                    for (j = 0; j < array.length; j++) {
-                        string = string + openCol;
-                        string = string + (array[j] * array[i]) + closeCol;
-                    }
-                    string = string + closeRow;
-                }
-                string = string + closeTable;
-                document.getElementById("result").innerHTML = string;
-            }
-            else{
-                string = "please input number values only" + enterBreak;
-                document.getElementById("result").innerHTML = string;
-            }
-        }
-
-    </script>
-
 </head>
-<body>
-<script src="JS/Title.js"></script>
+
+
 <!--the following "fork me on github" was from https://github.com/blog/273-github-ribbons-->
 <a href="https://github.com/alexcushing"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Find me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
 <div id="main">
+
     <div id="menu">
         <ul>
-            <li><a href="index.html">HOME</a></li>
-            <!--menu selection to home-->
-            <li><a href="About.html">ABOUT</a></li>
-            <!--menu selection to about-->
-            <li><a href="portfolio.html">PORTFOLIO</a></li>
-            <!--menu selection to portfolio-->
+            <!--menu selection to home/multiplication table assignment-->
+            <li><a href="index.html">Home</a></li>
+            <!--menu selection to JSON Assignment-->
+            <li><a href="portfolio.html">JSON Assignment</a></li>
+            <!--menu selection to Scrabble game Assignment-->
+            <li><a href="Scrabble.html">Scrabble Assignment</a></li>
         </ul>
     </div>
 </div>
@@ -92,29 +53,82 @@ updated by ARC on OCT 16, 2015 at 4:08 PM
     <!--main image-->
     <img src="images/me.jpg" alt="Pic of me">
 </div>
+<!--this is the form for the graph of the multiplication table's information that will be
+validated and then turned into a table when the user hits submit and it is  valid-->
 
-<form id="multGraph">
-    Enter first number:<br>
-    <input type="text" id="first_number">
+<div class = "tabMenu" id="tabSetup"></div><!--this is where the tab links appear-->
+
+<form class = "selectionArea" id="multGraph">
+    <!--label for the first box, marked as field for the validation-->
+    <label for="field">Select first number:<br></label>
+    <div id="slider" class="container">
+        <input class="left" type="text" id="field" name ="field" value="50" oninput="setToPointVal()">
+        <br>
+        <input type="range" name="points" id="points" value="50" min="0" max="100" onmousemove="displayVal()" onchange="fillTextBox()">
+    </div>
     <br>
-    Enter second number:<br>
-    <input type="text" id="second_number">
+    <!--label for the second box, marked as field2 for the validation-->
+    <label for="field2">Enter second number:<br></label>
+    <div id="slider2" class="container">
+        <input class="left" type="text" id="field2" name ="field2" value="50" oninput="setToPointVal()">
+        <br>
+        <input type="range" name="points2" id="points2" value="50" min="0" max="100" onmousemove="displayVal()" onchange="fillTextBox()">
+    </div>
     <br>
-    Enter third number:<br>
-    <input type="text" id="third_number">
+    <!--label for the third box, marked as field3 for the validation-->
+   <label for="field3">Enter third number:<br></label>
+    <div id="slider3" class="container">
+        <input class="left" type="text" id="field3" name ="field3" value="50" oninput="setToPointVal()">
+        <br>
+        <input type="range" name="points3" id="points3" value="50" min="0" max="100" onmousemove="displayVal()" onchange="fillTextBox()">
+    </div>
     <br>
-    Enter fourth number:<br>
-    <input type="text" id="fourth_number">
+    <!--label for the fourth box, marked as field4 for the validation-->
+    <label for="field4">Enter fourth number:<br></label>
+    <div id="slider4" class="container">
+        <input class="left" type="text" id="field4" name ="field4" value="50" oninput="setToPointVal()">
+        <br>
+        <input type="range" name="points4" id="points4" value="50" min="0" max="100" onmousemove="displayVal()" onchange="fillTextBox()">
+    </div>
 </form>
-<div id="mySubmit">
-    <button onclick="myFunction()">Submit</button>
-
-<p id="result"> </p>
+<!--submit button calls my function which maps out the multiplication graph-->
+<div id="mySubmit" class="selectionArea">
+    <button  onclick="graphTabs()">Submit</button>
+    <br><br><br>
+    <!--style sheet for the multiplication table, giving it a small black border(1 pixel) and giving
+    it some padding as well so that it isn't too close to any of the other information on the page-->
 </div>
-<!--the temp body text-->
-<div id="text_block">
-    This is placeholder text, while I design my website and decide what I want to put here, later on. This site is still
-    under construction, so don't judge me based on this. Thank you, and have a wonderful day.
+
+
+
+<div id="myDelete" class="selectionArea" >
+
+    <button onclick="myDelete()">Delete Tab # : </button>
+    <input type="text" id="delete">
+    <br><br><br>
+    <!--style sheet for the multiplication table, giving it a small black border(1 pixel) and giving
+    it some padding as well so that it isn't too close to any of the other information on the page-->
+</div>
+
+
+
+
+<div id="RightColumn" style="float: right; width: 20%;">
+</div>
+
+<div id='tabs'>
+    <!--<ul>
+        <li id="tab1"><a href='#tab1'>Tab 1</a></li>
+
+    </ul>-->
+    <header>
+    <nav>
+    <ul><!--this is the list that is created in the javascript code-->
+        <!--this list is described there too-->
+    </ul>
+        </nav></header>
+    <p id="result"> </p><!--this is where the changing graph results display, hidden behind links that appear dynamically on the left of the page-->
+
 </div>
 
 </body>

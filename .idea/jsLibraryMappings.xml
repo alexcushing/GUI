@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{jquery}" />
+    <file url="PROJECT" libraries="{additional-methods, jquery, jquery-1.10.2, jquery-1.11.1, jquery-1.11.3, jquery.mobile-1.4.5, jquery.validate}" />
   </component>
 </project>
