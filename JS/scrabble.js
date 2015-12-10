@@ -286,7 +286,7 @@ function newTiles()
         document.getElementById('totalScore').innerHTML = "Total score: " + THISISTHETOTALSCORE;
         restart();
     }else{
-        alert("Please submit a valid word and try again, ALSO MAKE SURE YOU LOCK YOUR WORD IN BEFORE YOU CLEAR THE WORD!");
+        alert("Submit a correct word!");
     }
 
 }
