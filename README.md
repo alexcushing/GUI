@@ -1,1 +1,1 @@
-HEY ITS AL PAL!
+Welcome to y GitHub for my GUI project sequence
