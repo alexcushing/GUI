@@ -1,1 +1,1 @@
-Welcome to y GitHub for my GUI project sequence
+Welcome to my GitHub for my GUI project sequence
