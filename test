@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>
+    <script src="mainjs.js"></script>
+    <script>
+        var pink = "#ffc5f5";
+        var blue = "a1d0fc";
+    </script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>prism</title>
+</head>
+<body>
+
+<button type="button" class="dropbtn">
+    <div id="x">
+        <img src="pictures/menu.png" alt="menu" id="menu">
+        <img src="pictures/defsplotch.png" alt="menu" id="bbubbles" onclick="colorTabsBlue()">
+        <img src="pictures/pink.png" alt="menu" id="bubbles" onclick="colorTabs()">
+        <img src="pictures/greenspoltch.png" alt="menu" id="gbubbles" onclick="colorTabsGreen()">
+        <img src="pictures/peachspoltch.png" alt="menu" id="peachbubbles" onclick="colorTabsPeach()">
+    </div>
+</button>
+<div id="image" class="dropdown">
+    <!--main image-->
+</div>
+
+<img src="pictures/paleblue.png" alt="prism" id="logo">
+
+<div id="profile">
+    <img src="pictures/profile.png" alt="prism" id="prof">
+    <h1>ALEX CUSHING</h1>
+    <a href="https://github.com/alexcushing"><h5 id="accent">Website</h5></a>
+
+</div>
+
+<!--<table id="tabl">
+    <tr>
+        <td> <img src="pictures/1.jpg"  alt="1" class="fit"></td>
+        <td><img src="pictures/2.jpg" alt="2"class="fit"></td>
+        <td><img src="pictures/3.jpg" alt="3"class="fit"></td>
+    </tr>
+    <tr>
+        <td><img src="pictures/4.jpg" alt="4" class="fit"></td>
+        <td><img src="pictures/5.jpg" alt="5" class="fit"></td>
+        <td><img src="pictures/6.jpg" alt="6" class="fit"></td>
+    </tr>
+</table>-->
+
+<input type="image" src="pictures/defupload.png" id='upload' width="80px" />
+<input type="file" id="my_file" style="display: none;" />
+        <!--<img src="pictures/defupload.png" alt="upload" id="upload">-->
+
+
+</body>
+</html>
